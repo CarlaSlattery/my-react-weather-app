@@ -7,6 +7,7 @@ function SearchForm({ searchText, setSearchText, onSubmit }) {
     <div className="search-form">
       <input
         type="text"
+        data-testid="search-form-input"
         placeholder="Enter Location"
         onChange={handleInputChange}
         value={searchText}

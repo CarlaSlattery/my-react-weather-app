@@ -1,5 +1,3 @@
-/* eslint-disable-next-line no-console */
-/* eslint-disable-next-line import/no-extraneous-dependencies  */
 import axios from "axios";
 
 const getForecast = (
@@ -27,7 +25,7 @@ const getForecast = (
       const { status } = error.response;
       if (status === 404) {
         setErrorMessage("Location not recognised - please try again");
-        console.error("Location is not valid", error);
+        console.error("Location not valid", error);
       }
       if (status === 500) {
         setErrorMessage("Oops! Server error :-( Please try later.");

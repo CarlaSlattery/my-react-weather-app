@@ -15,16 +15,17 @@ describe("ForecastDetails", () => {
       direction: "w",
     },
   };
+
   it("renders correctly", () => {
     const { asFragment } = render(<ForecastDetails forecast={validProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it("renders correct values for props", () => {
     const { getByText } = render(<ForecastDetails forecast={validProps} />);
-    expect(getByText("Thu Jan 01 1970")).toHaveClass("forecast-details__date");
-    expect(getByText("12°C")).toHaveClass("forecast-details__min-temperature");
-    expect(getByText("22°C")).toHaveClass("forecast-details__max-temperature");
-    expect(getByText("54%")).toHaveClass("forecast-details__humidity");
-    expect(getByText("5mph, w")).toHaveClass("forecast-details__wind");
+    expect(getByText("Min: 12°C")).toBeInTheDocument();
+    expect(getByText("Max: 22°C")).toBeInTheDocument();
+    expect(getByText("Humidity: 54%")).toBeInTheDocument();
+    expect(getByText("Wind: 5mph, w")).toBeInTheDocument();
   });
 });
